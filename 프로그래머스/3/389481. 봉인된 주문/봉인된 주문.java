@@ -9,8 +9,9 @@ class Solution {
                     result=result*26+letter-'a'+1;
                 return result;
             }).sorted().toArray();
-        //이진 탐색 라이브러리 에러로 임시조치
-        int pos=0;
+        int pos=Arrays.binarySearch(orders,n);
+        if(pos<0) pos=(pos+1)*(-1); //n보타 큰 최초의 수 idx
+        n+=pos;
         while(pos<orders.length&&orders[pos]<=n){
             n++;
             pos++;
@@ -25,8 +26,6 @@ class Solution {
         return answer.reverse().toString();
     }
 }
-
-//정렬 후 각 bans 단어의 순서 확인
 /*
 a:1
 b:2
