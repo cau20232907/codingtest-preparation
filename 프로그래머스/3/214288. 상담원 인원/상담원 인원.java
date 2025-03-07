@@ -5,15 +5,14 @@ class Solution {
     int[][] arr;
     public int solution(int k, int n, int[][] reqs) {
         Map<Integer,List<Request>>reqByType=Arrays.stream(reqs)
-            .map(Request::new)
-            // .sorted((i,j)->Integer.compare(i.time,j.time))
-            .collect(Collectors.groupingBy(r->r.type,Collectors.toList()));
+            .collect(Collectors.groupingBy(r->r[2]-1,
+                Collectors.mapping(Request::new, Collectors.toList())));
         int[][] waitingTime=new int[k][n-k+1];
         arr=waitingTime;
         //waitingTime[유형][추가 상담원 수]
         int totalTime=1;
         PriorityQueue<Integer> finishTimes=new PriorityQueue<>(waitingTime[0].length);
-        for(int i:reqByType.keySet()){
+        for(int i:reqByType.keySet()){ //요청 없는 것 거르기 가능
             List<Request> requests=reqByType.get(i);
             for(int j=0;j<waitingTime[i].length;j++){
                 totalTime=0;
@@ -47,11 +46,9 @@ class Solution {
         //getter 생략
         final int time;
         final int duration;
-        final int type;
         Request(int[] req){
             this.time=req[0];
             this.duration=req[1];
-            this.type=req[2]-1;
         }
     }
 }
