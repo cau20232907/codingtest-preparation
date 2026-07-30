@@ -1,10 +1,10 @@
 # [level 0] 수 조작하기 1 - 181926 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181926?language=java) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181926) 
 
 ### 성능 요약
 
-메모리: 87.9 MB, 시간: 3.53 ms
+메모리: 76.7 MB, 시간: 3.08 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2026년 07월 30일 23:59:28
+2026년 07월 31일 00:00:39
 
 ### 문제 설명
 

@@ -10,10 +10,10 @@ class Solution {
                     n--;
                     break;
                 case 'd':
-                    n+=10;
+                    n += 10;
                     break;
                 case 'a':
-                    n-=10;
+                    n -= 10;
                     break;
             }
         }
